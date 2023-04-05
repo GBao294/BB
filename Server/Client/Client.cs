@@ -1,0 +1,127 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+namespace Client
+{
+    public partial class Client : Form
+    {
+        public Client()
+        {
+            InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
+            Connect();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Send();
+            AddMess(txtbox.Text);
+        }
+        IPEndPoint IP;
+        Socket client;
+
+        void Connect()
+        {
+
+            IP = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+            client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
+           
+          
+
+            try
+            {
+                client.Connect(IP);
+            }
+            catch
+            {
+                MessageBox.Show("Khong the ket noi toi server !", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            Thread listen = new Thread(Receive);
+            listen.IsBackground = true;
+            listen.Start();
+
+        }
+        void Close()
+        {
+            client.Close();
+        }
+
+        void Send()
+        {
+            if (txtbox.Text != string.Empty)
+            {
+                client.Send(Serialize(txtbox.Text));
+            }
+        }
+        void Receive()
+        {
+            try
+            {
+                while (true)
+                {
+                    byte[] data = new byte[1024*5000];
+                    client.Receive(data);
+                    string mess = (string)Deseriliaze(data);
+
+                    AddMess(mess);
+                }
+            }
+            catch
+            {
+                Close();
+            }
+        }
+
+        void AddMess(string s)
+        {
+            listView1.Items.Add(new ListViewItem() { Text = s });
+            txtbox.Clear();
+        }
+        byte[] Serialize(object obj)
+        {
+            //khởi tạo stream để lưu các byte phân mảnh
+            MemoryStream stream = new MemoryStream();
+            //khởi tạo đối tượng BinaryFormatter để phân mảnh dữ liệu sang kiểu byte
+            BinaryFormatter formatter = new BinaryFormatter();
+            //phân mảnh rồi ghi vào stream
+            formatter.Serialize(stream, obj);
+            //từ stream chuyển các các byte thành dãy rồi cbi gửi đi
+            return stream.ToArray();
+        }
+
+        //Hàm gom mảnh các byte nhận được rồi chuyển sang kiểu string để hiện thị lên màn hình
+        object Deseriliaze(byte[] data)
+        {
+            //khởi tạo stream đọc kết quả của quá trình phân mảnh 
+            MemoryStream stream = new MemoryStream(data);
+            //khởi tạo đối tượng chuyển đổi
+            BinaryFormatter formatter = new BinaryFormatter();
+            //chuyển đổi dữ liệu và lưu lại kết quả 
+            return formatter.Deserialize(stream);
+        }
+
+
+        private void Client_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Client_close(object sender, FormClosedEventArgs e)
+        {
+            Close();
+        }
+    }
+}
