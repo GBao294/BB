@@ -1,0 +1,21 @@
+E:\UDP Chat\SGSclientUDP\SGSclient\bin\Debug\SGSclient.exe
+E:\UDP Chat\SGSclientUDP\SGSclient\bin\Debug\SGSclient.pdb
+E:\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.SGSClient.resources
+E:\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.LoginForm.resources
+E:\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.Properties.Resources.resources
+E:\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclientUDP.csproj.GenerateResource.Cache
+E:\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.exe
+E:\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.pdb
+F:\SOFT\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.exe
+F:\SOFT\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.pdb
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\bin\Debug\SGSclient.exe.config
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\bin\Debug\SGSclient.exe
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\bin\Debug\SGSclient.pdb
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclientUDP.csprojAssemblyReference.cache
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.SGSClient.resources
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.LoginForm.resources
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.Properties.Resources.resources
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclientUDP.csproj.GenerateResource.cache
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclientUDP.csproj.CoreCompileInputs.cache
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.exe
+D:\Các phần mềm edit\New folder\UDP Chat\SGSclientUDP\SGSclient\obj\Debug\SGSclient.pdb
